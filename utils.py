@@ -39,7 +39,7 @@ def get_month_data(data, start_month, end_month):
 def calculate_average_power(data, time=None):
     result = [[]]
     if not time or time == 'minute':
-        return sum([data[i]['St'] - data[i - 1]['St'] for i in range(1, len(data))]) / len(data - 1)
+        return sum([data[i]['St'] - data[i - 1]['St'] for i in range(1, len(data))]) / (len(data) - 1)
     elif time == 'hour':
         period = 60
     elif time == 'day':
